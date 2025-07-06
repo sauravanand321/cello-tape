@@ -1,0 +1,337 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeTape - Your Premier Cellotape Supplier</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light background */
+            color: #334155; /* Dark slate text */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; /* Light gray */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; /* Medium gray */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <a href="#" class="text-2xl font-bold text-indigo-600">PrimeTape</a>
+
+            <!-- Navigation Menu (Desktop) -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Home</a>
+                <a href="#products" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Products</a>
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">About Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Contact</a>
+            </nav>
+
+            <!-- Cart Icon and Mobile Menu Button -->
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <button id="cart-button" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 0a2 2 0 100 4 2 2 0 000-4z"></path>
+                        </svg>
+                    </button>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu (Hidden by default) -->
+        <nav id="mobile-menu" class="md:hidden bg-white py-2 px-4 shadow-md hidden">
+            <a href="#home" class="block py-2 text-gray-700 hover:bg-gray-100 rounded-md transition duration-300">Home</a>
+            <a href="#products" class="block py-2 text-gray-700 hover:bg-gray-100 rounded-md transition duration-300">Products</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:bg-gray-100 rounded-md transition duration-300">About Us</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:bg-gray-100 rounded-md transition duration-300">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-20 md:py-32 overflow-hidden rounded-b-lg shadow-lg">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                    Secure Your World with <span class="text-yellow-300">PrimeTape</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-8 opacity-90">
+                    High-quality cellotape for every need – from packaging to crafting. Strong, reliable, and versatile.
+                </p>
+                <a href="#products" class="bg-white text-indigo-700 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold shadow-xl transform hover:scale-105 transition duration-300 ease-in-out inline-block">
+                    Explore Our Tapes
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center md:justify-end">
+                <!-- Placeholder image for cellotape rolls -->
+                <img src="https://placehold.co/500x300/6366f1/ffffff?text=Cellotape+Rolls" alt="Assorted Cellotape Rolls" class="w-full max-w-md rounded-lg shadow-2xl transform rotate-3 hover:rotate-0 transition duration-500 ease-in-out">
+            </div>
+        </div>
+        <!-- Abstract background shapes for visual interest -->
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="absolute w-64 h-64 bg-white opacity-10 rounded-full -top-16 -left-16 blur-xl"></div>
+            <div class="absolute w-48 h-48 bg-white opacity-10 rounded-full -bottom-16 -right-16 blur-xl"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Our Top Products</h2>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                <!-- Product Card 1: Clear Packing Tape -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x250/e0e7ff/3f3f46?text=Clear+Packing+Tape" alt="Clear Packing Tape" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Heavy-Duty Clear Packing Tape</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Ultra-strong adhesive for secure packaging. Ideal for moving, shipping, and storage.
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-indigo-600">$9.99</span>
+                            <span class="text-gray-500 line-through">$12.99</span>
+                        </div>
+                        <button class="add-to-cart-btn w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2: Masking Tape -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x250/e0e7ff/3f3f46?text=Masking+Tape" alt="Masking Tape" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Precision Masking Tape</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Clean removal, perfect for painting, crafting, and delicate surfaces.
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-indigo-600">$6.49</span>
+                            <span class="text-gray-500 line-through">$8.00</span>
+                        </div>
+                        <button class="add-to-cart-btn w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3: Double-Sided Tape -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x250/e0e7ff/3f3f46?text=Double-Sided+Tape" alt="Double-Sided Tape" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Strong Double-Sided Tape</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Versatile adhesion for mounting, crafting, and office use. Invisible hold.
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-indigo-600">$7.99</span>
+                            <span class="text-gray-500 line-through">$9.50</span>
+                        </div>
+                        <button class="add-to-cart-btn w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4: Stationery Tape -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/400x250/e0e7ff/3f3f46?text=Stationery+Tape" alt="Stationery Tape" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Everyday Stationery Tape</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Clear, easy-to-tear tape for office, school, and home use.
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-2xl font-bold text-indigo-600">$3.99</span>
+                            <span class="text-gray-500 line-through">$5.00</span>
+                        </div>
+                        <button class="add-to-cart-btn w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-indigo-500 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-indigo-600 transition duration-300">
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://placehold.co/600x400/a78bfa/ffffff?text=Our+Story" alt="About Us Image" class="rounded-lg shadow-xl w-full h-auto object-cover">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About PrimeTape</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    At PrimeTape, we believe in the power of a strong bond. For over a decade, we've been dedicated to providing the highest quality cellotape solutions for homes, offices, and industries. Our commitment to innovation and customer satisfaction drives us to offer a diverse range of tapes, ensuring you find the perfect adhesion for every task.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    From heavy-duty packing tape that secures your most valuable shipments to delicate masking tape for precision crafting, PrimeTape is your trusted partner. We prioritize sustainability, sourcing eco-friendly materials whenever possible, and strive to deliver exceptional value with every roll.
+                </p>
+                <a href="#contact" class="inline-block bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition duration-300 shadow-md">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Newsletter Section -->
+    <section class="bg-indigo-700 text-white py-16 md:py-20 text-center rounded-t-lg shadow-lg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Connected!</h2>
+            <p class="text-lg md:text-xl mb-8 opacity-90">
+                Get the latest updates, exclusive offers, and tips on tape usage directly in your inbox.
+            </p>
+            <form class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="Enter your email address" class="flex-grow p-3 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-sm">
+                <button type="submit" class="bg-yellow-400 text-indigo-800 font-semibold py-3 px-6 rounded-md hover:bg-yellow-500 transition duration-300 shadow-md">
+                    Subscribe Now
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-gray-800 text-gray-300 py-10">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">PrimeTape</h3>
+                <p class="text-sm">
+                    Your trusted source for high-quality cellotape solutions.
+                    <br>123 Tape Lane, Adhesion City, 560001, India
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="hover:text-white transition duration-300">Home</a></li>
+                    <li><a href="#products" class="hover:text-white transition duration-300">Products</a></li>
+                    <li><a href="#about" class="hover:text-white transition duration-300">About Us</a></li>
+                    <li><a href="#contact" class="hover:text-white transition duration-300">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+                <p class="text-sm mb-2">Email: <a href="mailto:info@primetape.com" class="hover:text-white transition duration-300">info@primetape.com</a></p>
+                <p class="text-sm mb-4">Phone: <a href="tel:+919876543210" class="hover:text-white transition duration-300">+91 98765 43210</a></p>
+                <div class="flex space-x-4">
+                    <!-- Social Media Icons (Placeholder SVGs) -->
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07c3.252.148 4.779 1.63 4.938 4.938.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.252-1.63 4.779-4.938 4.938-.058.028-1.265.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.779-1.63-4.938-4.938-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.252 1.63-4.779 4.938-4.938 1.265-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.668.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.073 4.948.073s3.668-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.44-.645 1.44-1.44s-.645-1.44-1.44-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.34-1.6.57-2.46.69.88-.53 1.56-1.37 1.88-2.37-.83.49-1.75.85-2.72 1.05-.78-.83-1.89-1.35-3.13-1.35-2.36 0-4.28 1.92-4.28 4.28 0 .33.04.65.11.96-3.56-.18-6.73-1.89-8.85-4.48-.37.64-.58 1.39-.58 2.19 0 1.49.76 2.81 1.92 3.59-.7-.02-1.35-.21-1.92-.53v.05c0 2.08 1.48 3.81 3.44 4.2-.36.1-.74.15-1.13.15-.28 0-.55-.03-.81-.08.55 1.7 2.14 2.94 4.02 2.98-1.48 1.16-3.35 1.85-5.39 1.85-.35 0-.69-.02-1.03-.06 1.92 1.23 4.19 1.95 6.64 1.95 8 0 12.37-6.63 12.37-12.37 0-.2-.01-.4-.02-.6.85-.61 1.59-1.37 2.17-2.24z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.965 0h22.07c.531 0 .965.434.965.965v22.07c0 .531-.434.965-.965.965H.965c-.531 0-.965-.434-.965-.965V.965C0 .434.434 0 .965 0zm14.47 19.344V12.97h2.184l.327-2.532h-2.511v-1.61c0-.736.205-1.237 1.26-1.237h1.348V5.37c-.235-.031-.82-.08-1.558-.08-1.54 0-2.593.94-2.593 2.669v1.988H9.702v2.532h2.511v6.374h3.222z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm text-gray-500 mt-8">
+            &copy; 2025 PrimeTape. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Message Box for "Added to Cart" -->
+    <div id="message-box" class="fixed bottom-8 right-8 bg-green-500 text-white px-6 py-3 rounded-lg shadow-xl hidden transition-all duration-300 transform translate-y-full opacity-0">
+        Item added to cart!
+    </div>
+
+    <script>
+        // JavaScript for Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for "Add to Cart" functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        const cartCountSpan = document.getElementById('cart-count');
+        const messageBox = document.getElementById('message-box');
+        let cartCount = 0;
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                cartCount++;
+                cartCountSpan.textContent = cartCount;
+
+                // Show message box
+                messageBox.classList.remove('hidden');
+                setTimeout(() => {
+                    messageBox.classList.add('translate-y-0', 'opacity-100');
+                }, 10); // Small delay for transition to work
+
+                // Hide message box after a few seconds
+                setTimeout(() => {
+                    messageBox.classList.remove('translate-y-0', 'opacity-100');
+                    messageBox.classList.add('translate-y-full', 'opacity-0');
+                    setTimeout(() => {
+                        messageBox.classList.add('hidden');
+                    }, 300); // Wait for transition to complete before hiding
+                }, 2000); // Message visible for 2 seconds
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
